@@ -1,0 +1,16 @@
+<div class="card" >
+  <div class="img-container">
+    <div class="profile-pic">
+      <img [src]="news.profileImage" alt="">
+    </div>
+    <img class="news-img" [src]="news.newsImage" alt="">
+  </div>
+  <h2>{{ news.title }}</h2>
+  <p class="des">{{ news.description }}</p>
+  <div class="date">
+    <span><i class="fa fa-clock"></i>{{ formatDate(news.date) }}</span>
+    <span><i class="fa fa-comment"></i>{{ news.comments.length ? news.comments.length : '0' }}
+      <span>Comments</span>
+    </span>
+  </div>
+</div>

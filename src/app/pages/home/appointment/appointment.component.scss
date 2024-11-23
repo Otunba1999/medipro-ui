@@ -1,0 +1,83 @@
+@import "../../../../scss/mixins";
+@import "../../../../scss/variables";
+
+.container {
+  background-color: $semi-pri-color;
+  padding: 1rem;
+
+  form {
+    @include flex(column, flex-start, flex-start, 1.5rem);
+    padding: 1rem 0;
+    .input {
+      border-bottom: 1px solid #c6c4c4;
+      @include flex(row, flex-start, center, .5rem);
+      width: 100%;
+      .icon {
+        @include flex(row, center, center, 0);
+        //border: 1px solid red;
+        color: $main-color;
+        width: 50px;
+        font-size: 1.7rem;
+
+        &.show-icon {
+          transform: translateX(-50%);
+          animation: showIcon .15s linear forwards;
+
+        }
+      }
+
+      input {
+        flex: 1;
+        padding: .5rem;
+        background-color: $semi-pri-color;
+        border: none;
+
+        &:focus {
+          outline: none;
+          border: none;
+        }
+
+        &::placeholder {
+          color: $main-color;
+        }
+        &.hide-place{
+          &::placeholder {
+            opacity: 0;
+          }
+        }
+      }
+      input[type=date]{
+        color: $main-color;
+      }
+
+    }
+    button {
+      padding: .2rem 1rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+}
+
+@keyframes showIcon {
+  to {
+    transform: translateX(0);
+  }
+}
+@media screen and (min-width: 1000px) {
+  .container{
+    form{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      .input{
+
+          &:last-of-type{
+            grid-column: 1 / 2;
+
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>What Our Patients Say <span>About Us</span></h2>
+  <div class="slider" (scroll)="onScroll(slider)" #slider>
+    <div class="slide" *ngFor="let review of reviews">
+      <div class="reviewer-info" >
+        <div class="img-container">
+          <img [src]="review.reviewerProfileImg" alt="">
+        </div>
+        <span>{{review.reviewerName}}</span>
+        <span>{{review.reviewerCondition}}</span>
+      </div>
+      <p>{{review.review}}</p>
+    </div>
+  </div>
+  <div class="carousel">
+    <span *ngFor="let car of reviews; let i = index" [class.active]="i==currentIndex" class="active"></span>
+  </div>
+</div>

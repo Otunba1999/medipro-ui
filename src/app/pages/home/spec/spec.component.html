@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="spec" *ngFor="let spec of specs">
+    <i [class]="spec.icon"></i>
+    <div>
+      <h1>{{ spec.title }}</h1>
+      <p>If you need a doctor for to consectetuer Lorem ipsum dolor,
+        consectetur adipiscing elit Lorem ipsum dolor, consectetur Ut volutpat eros.</p>
+    </div>
+  </div>
+</div>
+<div class="container-2">
+  <div class="service">
+    <h1>Welcome To Medical Guide</h1>
+    <p>If you need a doctor for to consectetuer Lorem ipsum dolor,
+      consectetur adipiscing elit Lorem ipsum dolor, consectetur Ut volutpat eros</p>
+    <button (click)="onShowOptions()">{{ services[currentServiceIndex].title }} <i
+      [class]="showOptions ?'fa fa-angle-up' : 'fa fa-angle-down'"></i>
+    </button>
+    <ul class="desktop">
+      <li [class.active]="i==currentServiceIndex" *ngFor="let option of services; let i = index" (click)="changeService(i)">{{ option.title }}</li>
+    </ul>
+    <ul class="options" *ngIf="showOptions">
+      <li *ngFor="let option of services; let i = index" (click)="changeService(i)">{{ option.title }}</li>
+    </ul>
+    <div class="img-service">
+      <div class="image-container">
+        <img [src]="services[currentServiceIndex].image" [alt]="services[currentServiceIndex].title">
+      </div>
+      <div class="content">
+        <h2>{{ services[currentServiceIndex].subTitle }}</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+          Duis.</p>
+        <p>
+          Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing
+          elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud
+          exercitation.
+        </p>
+        <button>READ MORE</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-3">
+
+  <h1>Meet Our Specialist</h1>
+  <p>If you need a doctor for to consectetuer Lorem ipsum dolor,
+    consectetur adipiscing elit Lorem ipsum dolor, consectetur Ut volutpat eros</p>
+  <div class="member-container">
+    <figure class="img-container" *ngFor="let member of members; let i = index" (mouseenter)="onShowContacts(i)" (mouseleave)="onShowContacts(i)">
+      <div class="img-container">
+        <img [src]="member.image" alt="">
+        <div class="before" @expandContrast *ngIf="showContact && i == contactIndex">
+          <div class="icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-google-plus"></i>
+          </div>
+        </div>
+      </div>
+      <figcaption>{{member.name}}</figcaption>
+      <figcaption>{{member.title}}</figcaption>
+      <p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud
+        exercitation.</p>
+      <a href="#">&minus; View Profile</a>
+    </figure>
+  </div>
+</div>

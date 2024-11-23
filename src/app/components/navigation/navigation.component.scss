@@ -1,0 +1,84 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+.nav{
+  color: $main-color;
+  padding: 0;
+  //border: 1px solid red;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 25;
+  background-color: $pri-color;
+  width: 80%;
+  height: 100%;
+  @include flex(column, flex-start, center, 0);
+  //opacity: 0;
+  filter: blur(5px);
+  transform: translateX(20%);
+  animation: showNav 0.15s linear forwards;
+
+  h1{
+    text-align: center;
+    //width: 100%;
+    padding: 10px;
+  }
+
+  ul{
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    li{
+      width: 100%;
+      padding: 0;
+      .list{
+        @include flex(row, space-between, center, 0);
+        div{
+          //border: 1px solid black;
+          &:first-child{
+            flex: 1;
+            font-size: 1.1rem;
+            padding: 5px;
+          }
+          &:last-child{
+            width: 40px;
+            height: 40px;
+            flex: 0 0 auto;
+            @include flex(row, center, center, 0);
+            border-right: 1px solid $semi-pri-color;
+            border-left: 1px solid $semi-pri-color;
+            cursor: pointer;
+          }
+        }
+      }
+      &:first-child{
+        border-top: 1px solid $semi-pri-color;
+      }
+      @for $i from 1 through 10{
+        &:nth-child(#{$i}){
+          border-bottom: 1px solid $semi-pri-color;
+        }
+      }
+
+    }
+  }
+  &.hide-nav{
+    //filter: blur(5px);
+    //transform: translateX(100%);
+    animation: hideNav 0.15s linear forwards;
+  }
+}
+@keyframes showNav {
+  to {
+    //opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+}
+  @keyframes hideNav {
+  to{
+    //opacity: 1;
+    filter: blur(0);
+    transform: translateX(100%);
+  }
+
+}

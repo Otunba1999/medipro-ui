@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="emergency">
+    <i class="fa-solid fa-phone"></i>
+    <span>For Emergency Cases</span>
+    <span>1-300-400-8211</span>
+    <hr/>
+  </div>
+
+  <div class="medical-guide">
+    <h2>Medical Guide</h2>
+    <hr/>
+    <ul>
+      <li *ngFor="let service of services">
+        <i class="fa fa-arrow-right"></i> <a href="#">{{ service }}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="tweet">
+    <h2>Latest Tweets</h2>
+    <hr/>
+    <ul>
+      <li *ngFor="let tweet of tweets">
+        <div>
+          <i class="fab fa-twitter"></i>
+          <p><span>{{ tweet.username }}</span> {{ tweet.description }}</p>
+        </div>
+        <p class="day">{{ tweet.date.getDay() }} {{ tweet.date.getDay() == 1 ? 'day' : 'days' }} ago</p>
+      </li>
+    </ul>
+  </div>
+  <div class="news-letter">
+    <h2>NEWSLETTER</h2>
+    <hr/>
+    <div>
+      <i class="fa fa-envelope-open"></i>
+      <p>Sign up with your name and email to get updates fresh updates.</p>
+    </div>
+    <form>
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Email Address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+  <div class="get-in-touch">
+    <h2>GET IN TOUCH</h2>
+    <hr/>
+    <p>Medical Bibendum auctor, to consequat ipsum, nec sagittis sem</p>
+    <div>
+      <i class="fa fa-location"></i>
+      <p>Medical Ltd, Manhattan 1258, New York, USA Lahore</p>
+    </div>
+    <div>
+      <i class="fa fa-phone"></i>
+      <p>(+1) 234 567 8901</p>
+    </div>
+    <div>
+      <i class="fa fa-envelope"></i>
+      <p>hello&#64;medipro.com</p>
+    </div>
+  </div>
+  <div class="footer">
+    <p>copyright &copy; 2024 Medipro. All right reserved.</p>
+    <div>
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-google-plus"></i>
+      <i class="fab fa-instagram-square"></i>
+    </div>
+  </div>
+</div>
+

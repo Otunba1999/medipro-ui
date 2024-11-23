@@ -1,0 +1,171 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+.container{
+  width: 100%;
+  color: $main-color;
+  background-color: $semi-pri-color;
+  //padding: 1rem 1rem 0;
+  .emergency{
+    @include flex(column, flex-start, center, .5rem);
+    padding: 2rem 0;
+    text-transform: uppercase;
+    i{
+      font-size: 3.5rem;
+      margin: 2rem auto;
+    }
+    span{
+      font-weight: bold;
+      &:last-of-type{
+        font-size: 2rem;
+      }
+    }
+  }
+  hr{
+    margin-bottom: 2rem;
+  }
+  .medical-guide{
+    padding: 1rem;
+    ul{
+      @include flex(row, flex-start, center, .5rem);
+      flex-wrap: wrap;
+      li{
+        flex: 1 1 40%;
+        cursor: pointer;
+        a{
+          color: $main-color;
+          text-decoration: none;
+          font-size: 1rem;
+          margin-left: .5rem;
+        }
+      }
+    }
+  }
+  .tweet{
+    padding: 1rem;
+    ul{
+      li{
+        margin: 1.5rem 0;
+        div{
+          @include flex(row, flex-start, flex-start, .5rem);
+          i{
+            margin-top: .5rem;
+          }
+        }
+        .day{
+            margin-left: 1.4rem;
+        }
+      }
+    }
+
+  }
+  .news-letter{
+    padding: 1rem;
+    div{
+      @include flex(row, flex-start, center, .5rem);
+      i{
+        font-size: 1.3rem;
+        transform: rotate(-30deg);
+      }
+    }
+    form{
+      padding: 1rem;
+      @include flex(column, flex-start, flex-start, 1rem);
+      input{
+        width: 100%;
+        padding: .5rem;
+        background-color: #373E4C;
+        &::placeholder{
+          color: $main-color;
+        }
+      }
+      button{
+        padding: .5rem;
+        border: none;
+        border-radius:5px;
+        cursor: pointer;
+      }
+    }
+  }
+  .get-in-touch{
+    padding: 1rem;
+    div{
+      @include flex(row, flex-start, center, .9rem);
+      margin: 1rem 0;
+      i{
+        font-size: 1.3rem;
+      }
+    }
+  }
+  h2{
+    text-transform: uppercase;
+  }
+  hr{
+    margin: 1rem 0;
+  }
+  ul{
+    margin: 1rem 0;
+    list-style: none;
+  }
+  .footer{
+    @include flex(column, center, center, 0rem);
+    background-color: #373E4C;
+    width: 100%;
+    p{
+      margin-top: .5rem;
+    }
+    div{
+      @include flex(row, center, center, .9rem);
+      margin: 1rem 0;
+      i{
+        cursor: pointer;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1000px) {
+  .container{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .5rem;
+    font-size: 1rem;
+    .emergency{
+      grid-column: 1/5;
+      @include flex(column, center, center, .5rem);
+      padding: 1rem;
+      hr{
+        width: 100%;
+      }
+    }
+    .medical-guide{
+      grid-column: 1;
+    }
+    .tweet{
+      grid-column: 2;
+    }
+    .news-letter{
+      grid-column: 3;
+    }
+    .get-in-touch{
+      grid-column: 4;
+    }
+    .footer{
+      grid-column: 1/5;
+    }
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+

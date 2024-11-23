@@ -1,0 +1,15 @@
+<div class="container" @expandContrast>
+  <form>
+    <div class="input" *ngFor="let input of inputs; let i = index;">
+      <div class="icon" [ngClass]="i==selectedIndex ? 'show-icon' : ''" *ngIf="showIcon && i==selectedIndex && i!=3"
+           @slideIn>
+        <i [class]="input.icon"></i>
+      </div>
+      <input [ngClass]="i==selectedIndex ? 'hide-place' : ''" [type]="i!=3 ? 'text' : 'date' "
+             [placeholder]="input.placeholder"
+             (focus)="onFocus(i)"
+             (blur)="onBlur()">
+    </div>
+    <button type="submit">Send</button>
+  </form>
+</div>

@@ -1,0 +1,19 @@
+<div class="home-con" [ngClass]="showMenu ? 'show-menu' : 'hide-menu'">
+  <app-banner class="banner"></app-banner>
+  <app-appointment *ngIf="showAppointment"></app-appointment>
+  <app-spec></app-spec>
+  <div class="news-container">
+    <h2>Latest News From Medical Guide</h2>
+    <p>If you need a doctor for to consectetuer Lorem ipsum dolor,
+      consectetur adipiscing elit. Ut volutpat eros adipiscing nonummy.</p>
+    <div class="slider" #slider >
+      <app-slide *ngFor="let new$ of news; let i = index;" [news]="new$"></app-slide>
+    </div>
+    <button><i class="fa fa-less-than" (click)="scrollLeft(slider)"></i></button>
+    <button><i class="fa fa-greater-than" (click)="scrollRight(slider)"></i></button>
+
+  </div>
+  <app-reviews [reviews]="reviews"></app-reviews>
+</div>
+
+

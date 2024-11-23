@@ -1,0 +1,31 @@
+<div class="carousel">
+  <div class="list">
+    <div class="item" *ngFor="let banner of bannerProp; let i = index">
+      <img [src]="banner.bannerImage" alt="">
+      <div class="content">
+        <div class="title">
+          <h1>{{ banner.bannerTitle }}</h1>
+          <p>{{banner.bannerSubTitle}}</p>
+        </div>
+        <div class="des">
+          {{ banner.bannerContent ? banner.bannerContent :
+            'Pins are the bilge rats of the real amnesty,' +
+              'Pins are the bilge rats of the real amnesty, Pins are the bilge rats of the real amnesty.'
+          }}
+        </div>
+        <div class="button">
+          <button>READ MORE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="nav-but" (click)="showPrev()">
+    <i class="fa fa-less-than"></i>
+  </button>
+  <button class="nav-but" (click)="showNext()">
+    <i class="fa fa-greater-than"></i>
+  </button>
+  <div class="appointment" (click)="onShowAppointment()">Make An Appointment <i [class]="showAppointment ? 'fa fa-angle-up' :'fa fa-angle-down'" ></i></div>
+
+</div>
+

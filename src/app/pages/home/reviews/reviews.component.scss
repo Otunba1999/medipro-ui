@@ -1,0 +1,97 @@
+@import "../../../../scss/mixins";
+@import "../../../../scss/variables";
+.container{
+  background-color: #2d2d2f;
+  color: $main-color;
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  position: relative;
+  opacity: 0.9;
+  &:before{
+    content: "";
+    position: absolute;
+    inset: 0 0 0 0;
+    background-image: url("../../../../assets/images/slides/kali1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 0.1;
+  }
+  h2{
+    font-size: 1.7rem;
+    font-weight: normal;
+    span{
+      font-weight: bold;
+    }
+  }
+  .slider{
+    margin: 4rem 0 2rem;
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .slide{
+      flex: 0 0 100%;
+      width: 100%;
+      scroll-snap-align: start;
+    }
+    .reviewer-info{
+      @include flex(column, flex-start, center, 1rem);
+      .img-container{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+        img{
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      span{
+        margin-top: -1rem;
+        &:first-of-type{
+          color: $pri-color;
+          font-size: 1.7rem;
+        }
+        &:last-of-type{
+          margin-bottom: 1.5rem;
+        }
+      }
+    }
+    p{
+      padding: 1rem;
+      font-size: $para-font-size;
+      font-style: italic;
+    }
+  }
+  .carousel{
+    @include flex(row, center, center, 1rem);
+    span{
+      width: 40px;
+      height: 2px;
+      background-color: $semi-pri-color;
+      &.active{
+        background-color: $pri-color;
+      }
+    }
+
+  }
+}
+@media screen and (min-width: 1000px) {
+  .container{
+    padding: 4rem 7rem;
+    h2{
+      font-size: 2rem;
+      font-weight: normal;
+      span{
+        font-weight: bold;
+      }
+    }
+  }
+}

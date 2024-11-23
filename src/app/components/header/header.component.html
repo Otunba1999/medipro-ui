@@ -1,0 +1,14 @@
+<div class="header-con shrink show-menu" [ngClass]="showMenu ? 'show-menu' : 'hide-menu'">
+  <div class="logo">
+    <h1>Medi<span>Pro</span></h1>
+  </div>
+  <div class="nav">
+    <ul>
+      <li *ngFor="let nav of navProp; let i = index" [ngClass]="currentIndex==i ? 'active' : ''"
+      (click)="navigate(i, nav)">{{ nav }}</li>
+    </ul>
+  </div>
+  <div class="icon" (click)="showNavMenu()">
+    <i class="fa fa-bars"></i>
+  </div>
+</div>

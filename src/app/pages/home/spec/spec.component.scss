@@ -1,0 +1,242 @@
+@import "../../../../scss/mixins";
+@import "../../../../scss/variables";
+.container{
+  @include flex(column, flex-start, center, 1rem);
+  padding: 3rem 0;
+  .spec{
+    //border: 1px solid black;
+    @include flex(column, flex-start, center, 1rem);
+    padding: 1rem;
+    color: $semi-pri-color;
+    i{
+      font-size: 3rem;
+      background-color: $pri-color;
+      border-radius: 10px;
+      color: white;
+      padding: 1.5rem;
+    }
+    div{
+      h1{
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      p{
+        text-align: center;
+        font-size: 1rem;
+
+      }
+    }
+
+  }
+}
+.container-2{
+  width: 100%;
+  background-color: #f1eeee;
+  padding: 3rem 1rem;
+  .service{
+    width: 100%;
+    h1, p{
+      text-align: left;
+    }
+    h1{
+      font-size: 1.7rem;
+      margin-bottom: 5px;
+    }
+    p, button{
+      font-size: 1.2rem;
+    }
+    button{
+      background-color: $pri-color;
+      width: 100%;
+      border: none;
+      text-align: left;
+      padding: 1.2rem;
+      color: $main-color;
+      margin: 2rem 0 .5rem;
+      i{
+        margin-left: 5rem;
+      }
+    }
+    .desktop{
+      display: none;
+    }
+    .options{
+      z-index: 3;
+      background-color: black;
+      margin-top: -.5rem;
+      color: $main-color;
+      opacity: .8;
+      padding: 1rem;
+      list-style: none;
+      li{
+        font-size: 1.3rem;
+        border-bottom: 1px solid $semi-pri-color;
+        padding: 1rem 0;
+      }
+    }
+    .img-service{
+      width: 100%;
+      .image-container{
+        width: 100%;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .content{
+      h2{
+        font-size: 1.5rem;
+        margin: 1rem 0;
+      }
+      p{
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+
+      }
+      button{
+        background-color: $semi-pri-color;
+        font-size: .9rem;
+        border: none;
+        border-radius: 5px;
+        width: fit-content;
+        padding: .7rem 1.5rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.container-3{
+  padding: 3rem 1rem 5rem;
+  position: relative;
+  .before{
+    position: absolute;
+    inset: 0 0 0 0;
+    background-color: $pri-color;
+    opacity: 0.7;
+    //visibility: hidden;
+    transition: visibility 1.1s ease;
+    &:hover{
+      visibility: visible;
+    }
+    @include flex(row, center, center, 1rem);
+    .icons{
+      //width: 100%;
+      @include flex(row, center, center, 1rem);
+      font-size: 1.5rem;
+      color: $main-color;
+      i{
+        cursor: pointer;
+      }
+    }
+
+  }
+  p{
+    &:last-of-type{
+      margin: 1rem 0;
+    }
+  }
+  a{
+    color: black;
+    text-decoration: none;
+    font-style: italic;
+    font-weight: bold;
+  }
+}
+.img-container{
+  position: relative;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.service{
+  position: relative;
+  ul{
+    position: absolute;
+    //top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .container{
+    @include padding();
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .spec{
+      @include flex(row, flex-start, center, 1rem);
+      div{
+        text-align: left;
+        h1{
+          text-align: left;
+        }
+        p{
+          font-size: 1rem;
+          text-align: left;
+        }
+      }
+    }
+  }
+  .container-2{
+    @include padding();
+    .service{
+      button{
+        &:first-of-type{display: none;}
+      }
+      p{
+        font-size: 1rem;
+      }
+      .options{
+        display: none;
+      }
+      .desktop{
+        @include flex(row, flex-start, center, 4rem);
+        position: relative;
+        list-style: none;
+        border-bottom: 1px solid $semi-pri-color;
+        margin-bottom: 2rem;
+        z-index: 3;
+        li{
+          padding: .5rem 0;
+          font-size: 1.2rem;
+          cursor: pointer;
+          &.active{
+            border-bottom: 4px solid $pri-color;
+          }
+
+        }
+      }
+      .img-service{
+       display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 100% 100%;
+        gap: 1rem;
+        button{
+          display: inline;
+        }
+        p{
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  .container-3{
+    @include padding();
+    .member-container{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+  }
+  .img-container{
+    //position: relative;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

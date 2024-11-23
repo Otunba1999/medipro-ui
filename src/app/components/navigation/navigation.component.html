@@ -1,0 +1,13 @@
+<nav class="nav" @slideOut *ngIf="showMenu">
+  <h1>MediPro</h1>
+  <ul>
+    <li *ngFor="let nav of navProp">
+      <div class="list">
+        <div>{{nav}}</div>
+        <div [ngStyle]="{visibility: nav == 'Pages'?'visible' : 'hidden'}">
+          <i class="fa fa-greater-than"></i>
+        </div>
+      </div>
+    </li>
+  </ul>
+</nav>
